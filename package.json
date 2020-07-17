@@ -1,0 +1,41 @@
+{
+  "name": "devos-mono2",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "author": "heavenkiller2018 <yangyong_th@qq.com>",
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@vue/cli-service"
+    ]
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "clean": "yarn workspaces run clean && rimraf node_modules",
+    "server": "yarn workspace @devos/server",
+    "web": "yarn workspace @devos/web",
+    "server:start:debug": "yarn server start:debug"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "~2.23.0",
+    "@typescript-eslint/parser": "~2.23.0",
+    "concurrently": "~5.1.0",
+    "eslint": "~6.8.0",
+    "eslint-config-prettier": "~6.10.1",
+    "eslint-plugin-prettier": "~3.1.2",
+    "lerna": "~3.20.2",
+    "lint-staged": "~10.0.8",
+    "prettier": "~2.0.1",
+    "yorkie": "~2.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "license": "MIT"
+}
